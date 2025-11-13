@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowUp AI - Skin Analysis</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    body {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
+</style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+
+    <div class="bg-shapes">
+        <div class="shape shape-circle"></div>
+        <div class="shape shape-square"></div>
+        <div class="shape shape-triangle"></div>
+        <div class="shape shape-hexagon"></div>
+    </div>
+
+    <header>
+        <div class="logo">
+            <div class="logo-icon">🦋</div>
+            <span>GlowUp AI</span>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#analysis">Analysis</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="hero-icon">📸</div>
+        <h1>Upload your skin photo</h1>
+        <p class="subtitle" style="color: #3d2817; font-size: 20px">
+        Let AI take a closer look at your skin’s health to guide your glow-up
+</p>
+
+
+        <input type="file" id="upload" accept="image/*" style="display:none;">
+        <button class="cta-button" onclick="document.getElementById('upload').click();">
+            <span>Upload Image →</span>
+        </button>
+
+        <div id="result" style="margin-top:30px; color:#3d2817; font-size:18px; display:none;">
+            Analyzing your skin... please wait ✨
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 GlowUp AI| Built with ❤️ by TeamGlowUp AI</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const uploadInput = document.getElementById('upload');
+        const result = document.getElementById('result');
+
+        uploadInput.addEventListener('change', () => {
+            result.style.display = 'block';
+            setTimeout(() => {
+                result.innerText = '✅ Analysis Complete! Your skin is glowing ✨';
+            }, 2500);
+        });
+    </script>
+</body>
+</html>
